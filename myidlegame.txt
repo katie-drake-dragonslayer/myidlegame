@@ -1,0 +1,104 @@
+let's make a game!
+  name:gemstone miner
+  author:someone
+  desc:click the rock to get ores and gems
+  created:
+  updated:
+  version:0
+  
+Settings
+  building cost increase:100%
+  building cost refund:75%
+  
+CSS
+  #game
+  {
+    background:cornflowerblue;
+    font-family:"Times New Roman",Times,serif;
+    color:black;
+  }
+Includes
+
+Layout
+  *resources
+    contains:Resources
+    header:These are your resources.
+  *buildings
+    contains:Buildings, BulkDisplay
+    header:These are things you can build.
+    tooltip origin:left
+  *buttons
+  
+Buttons
+  *stoneclicker
+    name:stn clkr
+    class:stoneclicker hasFlares
+    on click:
+      gain 1 iron
+      if(chance(25%) gain 1 emerald
+      if(chance(12.5%) gain 1 ruby
+      if(chance(0.1%) gain 1 mgem
+    end
+    icon:https://thumbs.dreamstime.com/b/stone-game-element-cartoon-rock-ui-design-isolated-white-interface-buttons-193159567.jpg
+    no text
+  
+Resources
+  *coin|coins
+    name:c
+    desc:money
+    show earned
+    (coins:ps)
+    
+Buildings
+  *iron
+    name:Iron
+    desc:metal, does nothing
+    cost:1 coin
+    cost refund:100%
+    
+  *emerald|emeralds
+    name:Emerald
+    desc: an emerald, does nothing
+    cost:20 coins
+    cost refund:100%
+    
+  *ruby|rubys
+    name:Ruby
+    desc:a ruby, does nothing
+    cost:1000
+    cost refund:100%
+   
+  *mgem|mgems
+    name:Midnight Ruby
+    desc:a ruby as black as the night sky, very powerful. doubles the yield of miners
+    cost:100000
+    cost refund:100%
+    passive:
+      multiply gain of miner1
+      multiply gain of miner2
+    end
+    
+  *miner1
+    name:Iron Miner
+    desc:mines iron for you
+    cost:10 coins
+    on tick:gain 1 iron
+    tag:miner
+
+  *miner2
+    name:Gemstone miner
+    desc:mines gems for you
+    cost:1000 coins
+    on tick:
+      gain 1 emerald
+      if(chance(25%) gain 1 ruby
+      if(chance(1%) gain 1 mgem
+    end
+    
+Upgrades
+
+Items
+
+Achievements
+  
+Shinies
