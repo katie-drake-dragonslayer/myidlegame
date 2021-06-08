@@ -1,4 +1,4 @@
-let's make a game!
+Let's make a game!
   name:gemstone miner
   author:someone
   desc:click the rock to get ores and gems
